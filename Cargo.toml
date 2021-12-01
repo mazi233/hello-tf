@@ -9,5 +9,16 @@ edition = "2021"
 name = "infer_local"
 path = "src/bin/infer_local.rs"
 
+[[bin]]
+name = "infer_server"
+path = "src/bin/infer_server.rs"
+
 [dependencies]
 tensorflow = "0.16.1"
+tokio = { version = "1.12", features = ["full"] }
+tonic = "0.6"
+prost = "0.9"
+async-trait = "0.1"
+
+[build-dependencies]
+tonic-build = "0.6"
