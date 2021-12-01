@@ -3,7 +3,7 @@
     * pip install tensorflow grpcio-tools
   * 生成模型
   * 用Python测试模型
-* 用rust测试模型
+* [x] 用rust测试模型
   * 加载模型
   * 运行推理
 * 用rust实现一个grpc推理服务

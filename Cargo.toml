@@ -5,4 +5,9 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[[bin]]
+name = "infer_local"
+path = "src/bin/infer_local.rs"
+
 [dependencies]
+tensorflow = "0.16.1"
