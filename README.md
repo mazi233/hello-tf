@@ -1,5 +1,7 @@
 # hello-tf
 
+## 1. generate model
+
 * [x] 准备模型
   * 安装依赖
     * pip install tensorflow grpcio-tools

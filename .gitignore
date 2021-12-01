@@ -1,1 +1,4 @@
 /target
+
+pys/__pycache__
+pys/resnet50
