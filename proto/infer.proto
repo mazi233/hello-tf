@@ -15,3 +15,32 @@ message InferResponse {
 service Infer {
   rpc Infer(InferRequest) returns (InferResponse);
 }
+
+message PreProcessRequest {
+  bytes image = 1;
+}
+
+message PreProcessResponse {
+  repeated uint64 shape = 1;
+  repeated float data = 2;
+}
+
+message PostProcessRequest {
+  repeated uint64 shape = 1;
+  repeated float data = 2;
+}
+
+message Pred {
+  string name = 1;
+  float probability = 2;
+}
+
+// [('n02504458', 'African_elephant', 0.595625102519989)]
+message PostProcessResponse {
+  repeated Pred preds = 1;
+}
+
+service Process {
+  rpc PreProcess(PreProcessRequest) returns (PreProcessResponse);
+  rpc PostProcess(PostProcessRequest) returns (PostProcessResponse);
+}
