@@ -2,6 +2,8 @@
 
 ## 1. generate model
 
+## cd pys & run python3 -m grpc_tools.protoc -I../proto --python_out=. --grpc_python_out=. infer.proto
+
 * [x] 准备模型
   * 安装依赖
     * pip install tensorflow grpcio-tools

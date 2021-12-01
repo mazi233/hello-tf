@@ -2,3 +2,4 @@
 
 pys/__pycache__
 pys/resnet50
+pys/infer_pb*.py
