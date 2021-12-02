@@ -80,13 +80,13 @@ async fn classify_image(
     (StatusCode::OK, Json(results))
 }
 
-#[derive(Serialize, Debug)]
+#[derive(Serialize)]
 struct Pred {
     name: String,
     probability: f32,
 }
 
-#[derive(Serialize, Debug)]
+#[derive(Serialize)]
 struct Preds {
     image: String,
     preds: Vec<Pred>,
