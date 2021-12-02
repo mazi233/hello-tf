@@ -5,18 +5,6 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[[bin]]
-name = "infer_local"
-path = "src/bin/infer_local.rs"
-
-[[bin]]
-name = "infer_server"
-path = "src/bin/infer_server.rs"
-
-[[bin]]
-name = "infer_web"
-path = "src/bin/infer_web.rs"
-
 [dependencies]
 tensorflow = "0.16.1"
 tokio = { version = "1.12", features = ["full"] }

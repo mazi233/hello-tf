@@ -2,7 +2,7 @@ use axum::{
     extract::{Extension, Multipart},
     response::{Html, IntoResponse},
     routing::get,
-    AddExtensionLayer, Router,
+    AddExtensionLayer, Router, http::StatusCode, Json,
 };
 use hello_tf::{
     infer_client::InferClient, process_client::ProcessClient, InferRequest, InferResponse,
@@ -77,15 +77,16 @@ async fn classify_image(
             .collect();
         results.push(Preds { image, preds })
     }
+    (StatusCode::OK, Json(results))
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug)]
 struct Pred {
     name: String,
     probability: f32,
 }
 
-#[derive(Serialize)]
+#[derive(Serialize, Debug)]
 struct Preds {
     image: String,
     preds: Vec<Pred>,

@@ -44,3 +44,15 @@ service Process {
   rpc PreProcess(PreProcessRequest) returns (PreProcessResponse);
   rpc PostProcess(PostProcessRequest) returns (PostProcessResponse);
 }
+
+message WebRequest {
+  bytes image = 1;
+}
+
+message WebResponse {
+  repeated Pred preds = 1;
+}
+
+service Web {
+  rpc Process(WebRequest) returns (WebResponse);
+}
